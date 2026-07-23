@@ -1,1 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Requinte Buffet &amp; Decorações | Cheff Mary</title>
+<meta name="description" content="Buffet e decoração completa para casamentos, 15 anos, bodas, formaturas e coffee-break. Fale com a Cheff Mary.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marfim:#F8F4EC;
+    --marfim-alt:#F1EBDC;
+    --salvia:#6E7C5A;
+    --salvia-clara:#9AA687;
+    --verde-escuro:#333C29;
+    --dourado:#B8935A;
+    --dourado-claro:#D8B87F;
+    --carvao:#332E27;
+    --rosa:#C9A8A0;
+    --linha:rgba(184,147,90,0.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--marfim);
+    color:var(--carvao);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    line-height:1.65;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond', serif;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  ::selection{ background:var(--dourado); color:var(--marfim); }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+    html{scroll-behavior:auto;}
+  }
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.3em;
+    font-size:0.7rem;
+    color:var(--salvia);
+    font-weight:500;
+  }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 6vw; }
 
+  /* leaf motif svg used as divider */
+  .leaf-divider{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    margin:26px 0 0;
+  }
+  .leaf-divider svg{ width:34px; height:34px; }
+  .leaf-divider i{ width:46px; height:1px; background:var(--linha); display:block; }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 6vw;
+    transition:background .4s ease, padding .4s ease, box-shadow .4s ease;
+  }
+  header.scrolled{
+    background:rgba(248,244,236,0.94);
+    backdrop-filter:blur(8px);
+    padding:14px 6vw;
+    box-shadow:0 8px 24px rgba(51,46,39,0.08);
+  }
+  .brand{ display:flex; align-items:center; gap:14px; }
+  .brand-mark{
+    width:44px; height:44px; border-radius:50%;
+    border:1px solid var(--dourado);
+    display:flex; align-items:center; justify-content:center;
+    background:var(--marfim-alt);
+  }
+  .brand-mark span{
+    font-family:'Cormorant Garamond', serif; font-style:italic;
+    font-size:1.15rem; font-weight:600; color:var(--verde-escuro);
+  }
+  .brand-name{ font-family:'Cormorant Garamond', serif; font-size:1.15rem; letter-spacing:0.01em; color:var(--verde-escuro); }
+  .brand-name i{ font-style:italic; color:var(--salvia); font-weight:600; }
+  nav ul{ list-style:none; display:flex; gap:38px; }
+  nav a{
+    font-size:0.8rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--carvao);
+    position:relative; padding-bottom:4px;
+  }
+  nav a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px;
+    background:var(--dourado); transition:width .3s ease;
+  }
+  nav a:hover::after{ width:100%; }
+  .nav-toggle{ display:none; }
+
+  @media (max-width:860px){
+    nav ul{
+      position:fixed; top:0; right:-100%; height:100vh; width:min(78vw,320px);
+      background:var(--verde-escuro);
+      flex-direction:column; justify-content:center; gap:34px; padding:0 12vw;
+      transition:right .45s cubic-bezier(.77,0,.18,1);
+    }
+    nav ul.open{ right:0; }
+    nav a{ color:var(--marfim); font-size:1rem; }
+    .nav-toggle{
+      display:flex; flex-direction:column; gap:5px; cursor:pointer; z-index:200;
+      background:none; border:none; padding:6px;
+    }
+    .nav-toggle span{ width:24px; height:2px; background:var(--verde-escuro); display:block; transition:transform .3s ease, opacity .3s ease; }
+    .nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2){ opacity:0; }
+    .nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; min-height:100vh;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    overflow:hidden; padding-top:90px;
+  }
+  .hero-bg{
+    position:absolute; inset:0; z-index:-2;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(154,166,135,0.35), transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(184,147,90,0.3), transparent 50%),
+      linear-gradient(180deg, #FBF8F1 0%, #F3EEE1 100%);
+  }
+  .branch{
+    position:absolute; opacity:0.5; z-index:-1;
+  }
+  .branch.left{ top:10%; left:-60px; width:280px; transform:rotate(-12deg); }
+  .branch.right{ bottom:6%; right:-70px; width:320px; transform:rotate(160deg); }
+  .hero-inner{ max-width:720px; padding:0 24px; }
+  .hero .eyebrow{ margin-bottom:22px; }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.8rem); line-height:1.05;
+    color:var(--verde-escuro); font-weight:600; margin-bottom:20px; letter-spacing:-0.01em;
+  }
+  .hero h1 em{ font-style:italic; color:var(--dourado); }
+  .hero p{ font-size:1.08rem; color:var(--carvao); opacity:0.85; max-width:480px; margin:0 auto 40px; }
+  .btn-row{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px; padding:15px 30px;
+    font-size:0.82rem; text-transform:uppercase; letter-spacing:0.12em; border-radius:2px;
+    transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
+  }
+  .btn-primary{ background:var(--verde-escuro); color:var(--marfim); box-shadow:0 10px 30px -8px rgba(51,60,41,0.5); }
+  .btn-primary:hover{ background:#28301f; transform:translateY(-2px); }
+  .btn-ghost{ border:1px solid var(--dourado); color:var(--verde-escuro); }
+  .btn-ghost:hover{ background:rgba(184,147,90,0.14); transform:translateY(-2px); }
+
+  .scroll-cue{
+    position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    font-size:0.66rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--salvia);
+  }
+  .scroll-cue i{ width:1px; height:36px; background:var(--salvia-clara); position:relative; overflow:hidden; }
+  .scroll-cue i::after{
+    content:''; position:absolute; top:-100%; left:0; width:100%; height:100%;
+    background:var(--dourado); animation:drip 2.2s ease-in-out infinite;
+  }
+  @keyframes drip{ 0%{top:-100%;} 100%{top:100%;} }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{ position:relative; padding:130px 0; }
+  .section-head{ text-align:center; max-width:620px; margin:0 auto 66px; }
+  .section-head h2{ font-size:clamp(2rem,4vw,2.9rem); color:var(--verde-escuro); margin:18px 0 0; font-weight:600; }
+  .section-head p{ color:var(--carvao); opacity:0.8; font-size:1rem; margin-top:16px; }
+
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- SOBRE ---------- */
+  #sobre{ background:var(--marfim); }
+  .sobre-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:center; }
+  .portrait{
+    position:relative; aspect-ratio:4/5; border-radius:4px; overflow:hidden;
+    background:linear-gradient(160deg, var(--salvia-clara) 0%, var(--salvia) 55%, var(--verde-escuro) 100%);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 30px 60px -20px rgba(51,60,41,0.4);
+  }
+  .portrait::before{
+    content:''; position:absolute; inset:0;
+    background-image:repeating-linear-gradient(115deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 26px);
+  }
+  .portrait .monogram{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:5.4rem; font-weight:600; color:rgba(248,244,236,0.94); }
+  .portrait .cap{ position:absolute; bottom:22px; left:22px; right:22px; font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(248,244,236,0.88); }
+  .sobre-text .eyebrow{ margin-bottom:16px; display:block; }
+  .sobre-text h2{ font-size:clamp(1.9rem,3.4vw,2.5rem); color:var(--verde-escuro); margin-bottom:22px; font-weight:600; }
+  .sobre-text p{ color:var(--carvao); opacity:0.85; margin-bottom:18px; max-width:520px; }
+  .sobre-stats{ display:flex; gap:44px; margin-top:36px; flex-wrap:wrap; }
+  .sobre-stats b{ font-family:'Cormorant Garamond', serif; font-size:1.9rem; color:var(--dourado); display:block; }
+  .sobre-stats span{ font-size:0.72rem; letter-spacing:0.08em; color:var(--salvia); text-transform:uppercase; }
+
+  /* ---------- SERVIÇOS ---------- */
+  #servicos{ background:var(--marfim-alt); }
+  .servicos-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:22px; }
+  .servico-card{
+    background:#fdfbf6; border:1px solid var(--linha); border-radius:4px;
+    padding:34px 20px; text-align:left;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .servico-card:hover{ transform:translateY(-8px); box-shadow:0 24px 50px -22px rgba(51,60,41,0.3); border-color:var(--dourado); }
+  .servico-icon{
+    width:48px; height:48px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--dourado-claro), var(--salvia) 85%);
+    margin-bottom:20px; display:flex; align-items:center; justify-content:center;
+  }
+  .servico-icon svg{ width:22px; height:22px; }
+  .servico-card h3{ font-size:1.1rem; color:var(--verde-escuro); margin-bottom:8px; font-weight:600; }
+  .servico-card p{ font-size:0.85rem; color:var(--carvao); opacity:0.75; }
+
+  @media (max-width:1000px){ .servicos-grid{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:640px){ .servicos-grid{ grid-template-columns:repeat(2,1fr); } }
+
+  /* ---------- GALERIA ---------- */
+  #galeria{ background:var(--verde-escuro); color:var(--marfim); }
+  #galeria .section-head p{ color:rgba(248,244,236,0.72); }
+  #galeria .eyebrow{ color:var(--dourado-claro); }
+  #galeria .section-head h2{ color:var(--marfim); }
+  .galeria-grid{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:16px; }
+  .g-item{ position:relative; border-radius:4px; overflow:hidden; display:flex; align-items:flex-end; background-size:cover; background-position:center; }
+  .g-item span{ position:relative; z-index:2; padding:14px 16px; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(248,244,236,0.95); }
+  .g-item::after{ content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(20,24,15,0.65), rgba(20,24,15,0) 55%); z-index:1; }
+  .g1{ grid-column:span 2; grid-row:span 2; background:linear-gradient(135deg, var(--salvia-clara), var(--verde-escuro)); }
+  .g2{ background:linear-gradient(135deg, var(--dourado), var(--verde-escuro)); }
+  .g3{ background:linear-gradient(135deg, var(--rosa), #4a3d2e); }
+  .g4{ grid-row:span 2; background:linear-gradient(135deg, var(--salvia), #24291c); }
+  .g5{ background:linear-gradient(135deg, var(--dourado-claro), #3b3020); }
+  .g6{ grid-column:span 2; background:linear-gradient(135deg, var(--salvia-clara), var(--dourado)); }
+  .gallery-note{ text-align:center; margin-top:34px; font-size:0.82rem; color:rgba(248,244,236,0.55); }
+
+  @media (max-width:860px){
+    .galeria-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:130px; }
+    .g1,.g4{ grid-column:span 2; grid-row:span 1; }
+    .g6{ grid-column:span 2; }
+  }
+
+  /* ---------- CONTATO ---------- */
+  #contato{
+    background:radial-gradient(circle at 50% 0%, rgba(184,147,90,0.28), transparent 55%), var(--marfim);
+    text-align:center;
+  }
+  #contato h2{ font-size:clamp(2rem,4.4vw,3rem); color:var(--verde-escuro); font-weight:600; margin-bottom:18px; }
+  #contato p{ color:var(--carvao); opacity:0.8; max-width:520px; margin:0 auto 40px; }
+  .contato-cards{ display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
+  .contato-card{
+    background:#fdfbf6; border:1px solid var(--linha); border-radius:4px;
+    padding:30px 34px; min-width:230px; text-align:left;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .contato-card:hover{ transform:translateY(-6px); box-shadow:0 20px 40px -20px rgba(51,60,41,0.25); }
+  .contato-card .eyebrow{ display:block; margin-bottom:10px; }
+  .contato-card a{ font-family:'Cormorant Garamond', serif; font-size:1.25rem; color:var(--verde-escuro); }
+  .contato-card p{ margin:8px 0 0; font-size:0.85rem; color:var(--salvia); }
+
+  footer{ padding:36px 6vw; text-align:center; font-size:0.75rem; color:var(--salvia); border-top:1px solid var(--linha); }
+  footer i{ font-style:italic; color:var(--dourado); }
+
+  @media (max-width:900px){
+    .sobre-grid{ grid-template-columns:1fr; gap:44px; }
+  }
+  @media (max-width:560px){
+    section{ padding:90px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="brand">
+    <div class="brand-mark"><span>RB</span></div>
+    <div class="brand-name">Requinte Buffet <i>&amp; Decorações</i></div>
+  </div>
+  <nav>
+    <ul id="navList">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <svg class="branch left" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 380 C 90 300 70 260 40 220" stroke="#6E7C5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="55" cy="240" rx="26" ry="12" fill="#9AA687" transform="rotate(-30 55 240)"/>
+    <ellipse cx="42" cy="200" rx="24" ry="11" fill="#6E7C5A" transform="rotate(-20 42 200)"/>
+    <ellipse cx="70" cy="280" rx="24" ry="11" fill="#9AA687" transform="rotate(-40 70 280)"/>
+  </svg>
+  <svg class="branch right" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 380 C 90 300 70 260 40 220" stroke="#B8935A" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="55" cy="240" rx="26" ry="12" fill="#D8B87F" transform="rotate(-30 55 240)"/>
+    <ellipse cx="42" cy="200" rx="24" ry="11" fill="#B8935A" transform="rotate(-20 42 200)"/>
+    <ellipse cx="70" cy="280" rx="24" ry="11" fill="#D8B87F" transform="rotate(-40 70 280)"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">Cheff Mary · Buffet &amp; Decorações</div>
+    <h1>Cada festa,<br><em>com requinte.</em></h1>
+    <p>Buffet completo e decoração para casamentos, 15 anos, bodas, formaturas e coffee-break — tudo pensado nos mínimos detalhes.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://wa.me/5575988362027" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn btn-ghost" href="#servicos">Ver serviços</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Explore</span><i></i></div>
+</section>
+
+<section id="sobre">
+  <div class="wrap sobre-grid">
+    <div class="portrait reveal">
+      <div class="monogram">RB</div>
+      <div class="cap">Cheff Mary · Fundadora</div>
+    </div>
+    <div class="sobre-text reveal">
+      <span class="eyebrow">Sobre o buffet</span>
+      <h2>Sabor, cuidado e decoração completa</h2>
+      <p>O Requinte Buffet &amp; Decorações é conduzido pela Cheff Mary, com atenção a cada detalhe do seu evento: do cardápio à decoração, tudo alinhado para criar uma experiência completa para você e seus convidados.</p>
+      <p>Da mesa de doces à ambientação do salão, cada evento é planejado sob medida — para casamentos, aniversários, bodas, formaturas ou um coffee-break corporativo.</p>
+      <div class="sobre-stats">
+        <div><b>Completo</b><span>Buffet + decoração</span></div>
+        <div><b>Sob medida</b><span>Cada evento</span></div>
+        <div><b>Cheff Mary</b><span>À frente da cozinha</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">O que oferecemos</span>
+      <h2>Serviços</h2>
+      <div class="leaf-divider"><i></i><svg viewBox="0 0 24 24" fill="none" stroke="#B8935A" stroke-width="1.4"><path d="M12 21c4-3 7-6.5 7-10.5A7 7 0 0 0 5 10.5C5 14.5 8 18 12 21Z"/></svg><i></i></div>
+    </div>
+    <div class="servicos-grid">
+      <div class="servico-card reveal">
+        <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8F4EC" stroke-width="1.6"><path d="M12 2C9 6 8 9 8 12a4 4 0 0 0 8 0c0-3-1-6-4-10Z"/><path d="M12 16v6"/></svg></div>
+        <h3>Casamentos</h3>
+        <p>Buffet e decoração completa para o grande dia.</p>
+      </div>
+      <div class="servico-card reveal">
+        <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8F4EC" stroke-width="1.6"><path d="M12 2l2.4 6.8L21 11l-6.6 2.2L12 20l-2.4-6.8L3 11l6.6-2.2Z"/></svg></div>
+        <h3>15 anos</h3>
+        <p>Festas marcantes, do cardápio à ambientação.</p>
+      </div>
+      <div class="servico-card reveal">
+        <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8F4EC" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div>
+        <h3>Bodas</h3>
+        <p>Celebrações especiais com o carinho de sempre.</p>
+      </div>
+      <div class="servico-card reveal">
+        <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8F4EC" stroke-width="1.6"><path d="M6 3h12l-1 8H7L6 3Z"/><path d="M8 11l-2 10h12l-2-10"/></svg></div>
+        <h3>Formaturas</h3>
+        <p>Comemore essa conquista com estilo e sabor.</p>
+      </div>
+      <div class="servico-card reveal">
+        <div class="servico-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F8F4EC" stroke-width="1.6"><path d="M4 8h13a3 3 0 0 1 0 6h-1"/><path d="M4 8v9h12V8"/><path d="M8 2v3M12 2v3"/></svg></div>
+        <h3>Coffee-break</h3>
+        <p>Praticidade e requinte para eventos corporativos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nossos eventos</span>
+      <h2>Galeria</h2>
+      <div class="leaf-divider"><i></i><svg viewBox="0 0 24 24" fill="none" stroke="#D8B87F" stroke-width="1.4"><path d="M12 21c4-3 7-6.5 7-10.5A7 7 0 0 0 5 10.5C5 14.5 8 18 12 21Z"/></svg><i></i></div>
+    </div>
+    <div class="galeria-grid">
+      <div class="g-item g1 reveal"><span>Decoração de salão</span></div>
+      <div class="g-item g2 reveal"><span>Mesa de doces</span></div>
+      <div class="g-item g3 reveal"><span>Detalhes</span></div>
+      <div class="g-item g4 reveal"><span>Ambientação</span></div>
+      <div class="g-item g5 reveal"><span>Cardápio</span></div>
+      <div class="g-item g6 reveal"><span>Eventos realizados</span></div>
+    </div>
+    <p class="gallery-note">* Espaços reservados para as fotos reais dos eventos — é só substituir cada bloco por uma imagem.</p>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <span class="eyebrow">Vamos planejar seu evento?</span>
+    <h2>Fale com a Cheff Mary</h2>
+    <p>Orçamentos e datas disponíveis direto pelo WhatsApp.</p>
+    <div class="contato-cards">
+      <div class="contato-card reveal">
+        <span class="eyebrow">WhatsApp</span>
+        <a href="https://wa.me/5575988362027" target="_blank" rel="noopener">(75) 98836-2027</a>
+        <p>Orçamentos e agendamentos</p>
+      </div>
+      <div class="contato-card reveal">
+        <span class="eyebrow">Responsável</span>
+        <a href="#" onclick="return false;">Cheff Mary</a>
+        <p>Buffet e decorações</p>
+      </div>
+      <div class="contato-card reveal">
+        <span class="eyebrow">Especialidade</span>
+        <a href="#" onclick="return false;">Eventos completos</a>
+        <p>Buffet + decoração</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <b>Requinte Buffet</b> <i>&amp; Decorações</i> · Cheff Mary
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const toggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    navList.classList.toggle('open');
+  });
+  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    navList.classList.remove('open');
+  }));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
